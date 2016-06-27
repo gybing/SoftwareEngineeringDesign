@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="com.mysql.jdbc.Driver" database="questionlib" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="mgroup">
+      <Drawing expanded="true" location="489,202" dimensions="203,111" />
+      <Columns>
+        <Column name="groupid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="36" />
+        </Column>
+        <Column name="college" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="groupname" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="teaid" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="paper">
+      <Drawing expanded="true" location="373,-2" dimensions="215,131" />
+      <Columns>
+        <Column name="paperid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="papername" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="ownerid" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="paperTime" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="TIMESTAMP" size="19" />
+        </Column>
+        <Column name="destGroup" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="36" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="quespaper">
+      <Drawing expanded="true" location="43,0" dimensions="178,111" />
+      <Columns>
+        <Column name="paperid" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="quesid" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="qvalue" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="FLOAT" size="12" />
+        </Column>
+        <Column name="rid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="question">
+      <Drawing expanded="true" location="26,166" dimensions="271,251" />
+      <Columns>
+        <Column name="quesid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="quesname" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="30" />
+        </Column>
+        <Column name="quescontent" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="LONGTEXT" size="2147483647" />
+        </Column>
+        <Column name="quesanswer" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="LONGTEXT" size="2147483647" />
+        </Column>
+        <Column name="questype" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="other1" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="100" />
+        </Column>
+        <Column name="other2" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="100" />
+        </Column>
+        <Column name="other3" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="100" />
+        </Column>
+        <Column name="other4" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="100" />
+        </Column>
+        <Column name="ownerid" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="insertTime" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="TIMESTAMP" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="student">
+      <Drawing expanded="true" location="819,160" dimensions="224,191" />
+      <Columns>
+        <Column name="stuid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="stuname" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="30" />
+        </Column>
+        <Column name="password" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="college" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="groupid" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="VARCHAR" size="36" />
+        </Column>
+        <Column name="phone" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="email" primary_key="false" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="registerTime" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="TIMESTAMP" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="stupaper">
+      <Drawing expanded="true" location="854,-5" dimensions="178,111" />
+      <Columns>
+        <Column name="stuid" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="paperid" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="score" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="FLOAT" size="12" />
+        </Column>
+        <Column name="rid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="teacher">
+      <Drawing expanded="true" location="428,387" dimensions="224,171" />
+      <Columns>
+        <Column name="teaid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="teaname" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="30" />
+        </Column>
+        <Column name="password" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="college" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="phone" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="email" primary_key="false" foreign_key="false" required="true" unique="true">
+          <Data type="VARCHAR" size="40" />
+        </Column>
+        <Column name="registerTime" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="TIMESTAMP" size="19" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="FKskf9l4iyrwqvfnxsnfx2rg8om">
+      <Details primary_table="teacher" foreign_table="mgroup">
+        <PrimaryKeys>
+          <ColumnName name="teaid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="teaid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FKb4c0pjv13pcr513f89hpq9g9h">
+      <Details primary_table="teacher" foreign_table="paper">
+        <PrimaryKeys>
+          <ColumnName name="teaid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="ownerid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FKc8gr37voivt1iaho6a89blfpu">
+      <Details primary_table="mgroup" foreign_table="paper">
+        <PrimaryKeys>
+          <ColumnName name="groupid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="destGroup" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FKa1d17ml2i77jj4iry1edrpuy3">
+      <Details primary_table="paper" foreign_table="quespaper">
+        <PrimaryKeys>
+          <ColumnName name="paperid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="paperid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FKbot6w5slt6n7x3pcujg8lw5cs">
+      <Details primary_table="question" foreign_table="quespaper">
+        <PrimaryKeys>
+          <ColumnName name="quesid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="quesid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FKqci3av542w5h16a4lmnoro7s4">
+      <Details primary_table="teacher" foreign_table="question">
+        <PrimaryKeys>
+          <ColumnName name="teaid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="ownerid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FKi4k4p8rlhcv32wc9yi2gohsim">
+      <Details primary_table="mgroup" foreign_table="student">
+        <PrimaryKeys>
+          <ColumnName name="groupid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="groupid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FKohdtmxltrqi2ipjpg3tbrlvsu">
+      <Details primary_table="paper" foreign_table="stupaper">
+        <PrimaryKeys>
+          <ColumnName name="paperid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="paperid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK8dr8cufd3c950gasngynmcfdr">
+      <Details primary_table="student" foreign_table="stupaper">
+        <PrimaryKeys>
+          <ColumnName name="stuid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="stuid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+
